@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Maths Institute</title>
+     <!-- Add to home screen for Android and modern mobile browsers -->
+    <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
+    <meta name="theme-color" content="#4DBA87">
+
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="The Maths Institute">
+    <!-- Add to home screen for Windows -->
+    <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(js|css)$/)) { %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
+  </head>
+  <body>
+    <noscript>
+      This is your fallback content in case JavaScript fails to load.
+    </noscript>
+    <div id="app"></div>
+    <!-- Todo: only include in production -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
+
+
+<script>
+  var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"fa59fb7de4884762e941abdc91821f9a3028a3e5a6c498dfa1f53dcc0112e15fa93e48a2189867844505c3e115715391", values:{},ready:function(){}};
+  var d=document;
+  s=d.createElement("script");
+  s.type="text/javascript";
+  s.id="zsiqscript";
+  s.defer=true;
+  s.src="https://salesiq.zoho.com/widget";
+  t=d.getElementsByTagName("script")[0];
+  t.parentNode.insertBefore(s,t);
+  d.write("<div id='zsiqwidget'></div>");
+
+
+  function initMap() {
+    console.log('GoogleMap initMap called in index.html')
+    var lh = {lat: -34.0340162, lng: 151.0328529};
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: lh,
+      zoom: 10
+    });
+
+    var marker = new google.maps.Marker({
+      position: lh,
+      map: map,
+      label: {
+        color: 'black',
+        fontWeight: 'bold',
+        fontsize:'5rem',
+        text: 'The Maths Institute',
+      },    });
+
+    var infowindow = new google.maps.InfoWindow();
+    var service = new google.maps.places.PlacesService(map);
+
+    service.getDetails({
+      placeId: 'ChIJHymNG4XHEmsRj2u0nNMajBM'
+    }, function(place, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+      }
+    });
+  }
+
+  var mapAPIKEY='AIzaSyAVB2Hy2qRdMkim3MW9QI3AmUPus8U2x78';
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVB2Hy2qRdMkim3MW9QI3AmUPus8U2x78&callback=initMap" async defer></script>

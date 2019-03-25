@@ -1,0 +1,62 @@
+这是还没有系统整理的一些疑问和笔记
+==========
+
+git add -p //todo:应该是逐个被改变的文档都要确认是否加入
+---
+in node js , when we want to get the path of file,
+we use:
+
+    const path = require('path')//Todo:require还可以取得其它什么？
+
+
+app.use(express.static)
+
+------------------
+To avoid collision between database access and html access endpoints,
+we can put "/api/" in front of the database endpoints.
+
+---------------
+since vue router has been used, routes are not handled by express, therefore, in the express server we should
+direct all the get requests to out built files
+    app.get('*',(req,res,next)=>{ //Todo: app.get(<path>,<function>)应该怎么调整  app有其它method吗？
+     res.sendFile(path.join(__dirname,'..','dist'))
+    })
+
+----------
+在docker terminal里面使用md5sum
+  docker docker exect -it angry_williams sh //Todo: -it 是什么， angry_williams sh是什么
+  md5sum <文件名>
+
+Research questions:
+==============
+Express usage:
+  express.static(path.join(__dirname,'..','dist')))//serving static file?
+
+--
+-docker build file commands //Todo:怎么写一个docker file，过程和语法分别是怎样
+
+--建立git version control----
+git init
+git status //todo:用来干嘛
+
+去bitbucket或者github建立repo,
+然后copy repo的ssh代码， 在本地terminal：
+git remote add origin git@bitbucket.org:Leonlidawn/<projectname>.git
+
+git add . //准备文件
+git commit -m '<说明>'
+git push -u origin master   //Todo:需要确认一下git push格式，-u是什么
+
+more git notes:https://blog.csdn.net/tianyafeng123xin/article/details/52635324
+
+
+在bitbucket 的setting->access key 加入 本地的public key
+----
+同样道理，如果不需要docker的话，直接在server连接。
+
+
+process.argv.slice(2) //Todo:这一句应该是取得第二个argument，那么还可以通过process调用其它什么
+process.exit() //进程直接结束 to use it in this project: nodemon server.js --port 8082
+
+
+

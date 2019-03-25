@@ -1,0 +1,67 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+
+
+ file is not used in this project currently, code is directly appended in .vue file.
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.carousel-item {
+  height: 55vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+.bd-callout {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: 0.4rem;
+  border-radius: .25rem;
+}
+
+.bd-callout-colorNavy {
+  border-left-color: #5bc0de;
+}
+
+.bd-callout-colorNavy h4 {
+  color: #17a2b8;
+}
+
+.bd-callout-colorGold {
+  border-left-color: #ffc107;
+}
+.bd-callout-colorGold h4{
+  color: #f0ad4e;
+}
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;  /* The height is 400 pixels */
+  width: 100%;  /* The width is the width of the web page */
+}
+
+.niceFont {
+  color: #383d41;
+  font-size: 20px;
+  line-height: 1.5rem;
+  word-wrap: break-word;
+}
