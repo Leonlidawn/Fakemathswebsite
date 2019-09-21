@@ -1,5 +1,5 @@
 前言：
-这个项目是根据okta教程魔改出来的。目的熟悉一下vue.js和digital ocean部署.
+这个项目是根据okta教程魔改出来的。目的熟悉一下vue.js和digital ocean部署. 当时对很多地方还是一知半解，写得恨不规范。有机会可以用react从新捋一遍。
 
 
 请先参考https://developer.okta.com/blog/2018/02/15/build-crud-app-vuejs-node做一次
