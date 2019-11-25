@@ -8,7 +8,7 @@ const path = require('path');
 const minimist = require('minimist');
 
 const args = minimist(process.argv.slice(2));
-const PORT = args.port || 8081;
+const PORT = args.port || 80;
 
 
 //Todo: replace your client id and issuer here.
