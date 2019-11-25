@@ -7,7 +7,7 @@
     <div class="col-lg-6">
       <img class="img-responsive"  src="../src/assets/images/logo.png" alt="logo" width="70">ß
       <a class="navbar-brand" href="/"></a>
-      <b-navbar-brand to="/">The Maths Institute(fake site for practice)</b-navbar-brand>
+      <b-navbar-brand to="/">The Maths Institute(beta)</b-navbar-brand>
 
       <b-navbar-toggle target="nav_collapse"></b-navbar-toggle >
     </div>
